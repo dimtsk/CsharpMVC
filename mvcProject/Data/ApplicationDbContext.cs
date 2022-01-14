@@ -1,0 +1,19 @@
+﻿using Microsoft.EntityFrameworkCore;
+using mvcProject.Models;
+
+namespace mvcProject.Data
+{
+    /*
+     * DbContext -> entity framework core dependency
+     */
+    public class ApplicationDbContext : DbContext
+    {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
+
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Expense> Expenses { get; set; }
+    }
+}
